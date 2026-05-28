@@ -364,8 +364,68 @@ background:rgba(255,255,255,.04);
 border:1px solid rgba(0,255,255,.12);
 padding:30px;
 border-radius:25px;
-transition:.4s;
+transition:.5s;
 backdrop-filter:blur(12px);
+position:relative;
+overflow:hidden;
+cursor:pointer;
+transform:translateY(0);
+}
+
+/* GLOW EFFECT */
+
+.project-card::before{
+content:"";
+position:absolute;
+width:220px;
+height:220px;
+background:#00ffff;
+filter:blur(120px);
+opacity:0;
+top:-80px;
+right:-80px;
+transition:.5s;
+}
+
+/* HOVER */
+
+.project-card:hover{
+
+transform:
+translateY(-15px)
+scale(1.02);
+
+box-shadow:
+0 0 35px rgba(0,255,255,.25);
+
+border:
+1px solid rgba(0,255,255,.35);
+
+}
+
+/* GLOW ACTIVE */
+
+.project-card:hover::before{
+opacity:.18;
+}
+
+/* ICON ANIMATION */
+
+.project-card i{
+transition:.5s;
+}
+
+.project-card:hover i{
+
+transform:
+scale(1.2)
+rotate(5deg);
+
+color:#00ffff;
+
+text-shadow:
+0 0 20px #00ffff;
+
 }
 
 .project-card:hover{
@@ -655,28 +715,78 @@ FEATURED PROJECTS
 
 <div class="projects">
 
+<div class="projects">
+
+<!-- PROJECT 1 -->
+
 <div class="project-card">
+
 <i class="fa-solid fa-cash-register"></i>
-<h3>Modern POS System</h3>
+
+<h3>Kasir Pro System</h3>
+
 <p>
-A modern cashier web application with realtime dashboard, transaction history, dark mode, and crypto payment integration.
+Modern cashier web application with realtime transactions, responsive dashboard UI, dark mode interface, and modern POS features.
 </p>
+
+<br>
+
+<a href="https://web-kasir-pro.vercel.app/"
+target="_blank"
+class="btn btn-primary">
+
+LIVE DEMO
+
+</a>
+
 </div>
 
+
+<!-- PROJECT 2 -->
+
 <div class="project-card">
+
 <i class="fa-solid fa-chart-line"></i>
+
 <h3>Realtime Dashboard</h3>
+
 <p>
-Interactive dashboard system with sales visualization and responsive modern UI.
+Interactive dashboard system with futuristic UI design and realtime data visualization for modern web applications.
 </p>
+
+<br>
+
+<a href="#"
+class="btn btn-secondary">
+
+COMING SOON
+
+</a>
+
 </div>
 
+
+<!-- PROJECT 3 -->
+
 <div class="project-card">
+
 <i class="fa-brands fa-bitcoin"></i>
+
 <h3>Web3 Payment Concept</h3>
+
 <p>
-Learning and experimenting with cryptocurrency payment systems and blockchain integration.
+Learning and experimenting with blockchain payment systems and cryptocurrency integration for future web technology.
 </p>
+
+<br>
+
+<a href="#"
+class="btn btn-secondary">
+
+IN DEVELOPMENT
+
+</a>
+
 </div>
 
 </div>
