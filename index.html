@@ -13,6 +13,38 @@
 
 <style>
 
+/* LOADER */
+
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:#020617;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:99999;
+transition:1s;
+}
+
+.loader-text{
+font-family:'Orbitron',sans-serif;
+font-size:28px;
+color:#00ffff;
+letter-spacing:3px;
+animation:blink 1s infinite;
+text-shadow:0 0 20px #00ffff;
+}
+
+@keyframes blink{
+0%,100%{
+opacity:1;
+}
+50%{
+opacity:.3;
+}
+}
+
 *{
 margin:0;
 padding:0;
@@ -436,6 +468,16 @@ font-size:32px;
 
 <body>
 
+<!-- LOADING SCREEN -->
+
+<div id="loader">
+
+<div class="loader-text">
+INITIALIZING SYSTEM...
+</div>
+
+</div>
+
 <div class="cyber-grid"></div>
 <div class="glow"></div>
 
@@ -469,9 +511,7 @@ WEB3<br>
 DEVELOPER PORTFOLIO
 </h1>
 
-<h3>
-Future Frontend Developer • Web3 Learner • Technology Enthusiast
-</h3>
+<h3 id="typing"></h3>
 
 <p>
 I am Raulgonzales Manoa, an Information Technology student passionate about modern web development, blockchain systems, cyber technology, and futuristic digital interfaces.
@@ -680,6 +720,68 @@ Building the future through technology, Web3, and modern software systems.
 </p>
 
 </footer>
+
+<script>
+
+/* LOADER */
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+document.getElementById("loader").style.opacity="0";
+
+setTimeout(()=>{
+document.getElementById("loader").style.display="none";
+},1000);
+
+},1800);
+
+});
+
+
+/* TYPING EFFECT */
+
+const text =
+[
+"Future Frontend Developer",
+"Web3 Learner",
+"Technology Enthusiast"
+];
+
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+(function type(){
+
+if(count === text.length){
+count = 0;
+}
+
+currentText = text[count];
+
+letter = currentText.slice(0,++index);
+
+document.getElementById("typing").textContent = letter;
+
+if(letter.length === currentText.length){
+
+count++;
+index = 0;
+
+setTimeout(type,1200);
+
+}else{
+
+setTimeout(type,90);
+
+}
+
+})();
+
+</script>
 
 </body>
 </html>
