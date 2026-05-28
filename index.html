@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>RAULGONZALES MANOA | Personal Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+/* FUTURISTIC BACKGROUND */
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+background:
+linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.88)),
+url('businessstar-wallpaper-9113436_1920.png');
+background-size:cover;
+background-position:center;
+z-index:-2;
+}
+
+body::after{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+background:
+linear-gradient(90deg,
+rgba(0,255,255,.05) 1px,
+transparent 1px),
+linear-gradient(
+rgba(0,255,255,.05) 1px,
+transparent 1px);
+background-size:40px 40px;
+z-index:-1;
+animation:gridMove 20s linear infinite;
+}
+
+@keyframes gridMove{
+0%{
+transform:translateY(0);
+}
+100%{
+transform:translateY(40px);
+}
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(14px);
+background:rgba(0,0,0,.35);
+border-bottom:1px solid rgba(0,255,255,.15);
+z-index:1000;
+}
+
+.logo{
+font-family:'Orbitron',sans-serif;
+font-size:24px;
+font-weight:700;
+color:#00f7ff;
+letter-spacing:2px;
+}
+
+nav ul{
+display:flex;
+gap:28px;
+list-style:none;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-size:14px;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#00f7ff;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:120px 8% 80px;
+}
+
+.hero-content{
+max-width:1200px;
+width:100%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.hero-text h1{
+font-size:68px;
+font-family:'Orbitron',sans-serif;
+line-height:1.1;
+margin-bottom:20px;
+background:linear-gradient(to right,#00f7ff,#ffffff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero-text h3{
+font-size:24px;
+margin-bottom:20px;
+color:#00f7ff;
+}
+
+.hero-text p{
+line-height:1.9;
+color:#d6d6d6;
+margin-bottom:30px;
+}
+
+.btn-group{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 28px;
+border:none;
+border-radius:50px;
+cursor:pointer;
+font-weight:600;
+font-size:15px;
+transition:.3s;
+text-decoration:none;
+display:inline-flex;
+align-items:center;
+gap:10px;
+}
+
+.btn-primary{
+background:#00f7ff;
+color:black;
+box-shadow:0 0 25px rgba(0,247,255,.5);
+}
+
+.btn-primary:hover{
+transform:translateY(-4px);
+}
+
+.btn-secondary{
+border:1px solid #00f7ff;
+color:#00f7ff;
+background:transparent;
+}
+
+.btn-secondary:hover{
+background:#00f7ff;
+color:black;
+}
+
+/* PROFILE CARD */
+
+.profile-card{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(0,255,255,.15);
+backdrop-filter:blur(18px);
+padding:40px;
+border-radius:30px;
+box-shadow:0 0 40px rgba(0,255,255,.12);
+position:relative;
+overflow:hidden;
+}
+
+.profile-card::before{
+content:"";
+position:absolute;
+width:200px;
+height:200px;
+background:#00f7ff;
+filter:blur(120px);
+top:-80px;
+right:-80px;
+opacity:.3;
+}
+
+.profile-img{
+width:170px;
+height:170px;
+border-radius:50%;
+border:4px solid #00f7ff;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px;
+background:rgba(255,255,255,.05);
+box-shadow:0 0 30px rgba(0,247,255,.4);
+margin-bottom:25px;
+}
+
+.profile-card h2{
+text-align:center;
+margin-bottom:10px;
+font-family:'Orbitron',sans-serif;
+}
+
+.profile-card p{
+text-align:center;
+color:#cfcfcf;
+margin-bottom:25px;
+}
+
+.info{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.info div{
+display:flex;
+align-items:center;
+gap:15px;
+background:rgba(255,255,255,.03);
+padding:15px;
+border-radius:15px;
+}
+
+.info i{
+color:#00f7ff;
+font-size:18px;
+}
+
+/* SECTION */
+
+section{
+padding:100px 8%;
+}
+
+.section-title{
+font-size:42px;
+font-family:'Orbitron',sans-serif;
+margin-bottom:50px;
+text-align:center;
+background:linear-gradient(to right,#00f7ff,#ffffff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* SKILLS */
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.skill-card{
+background:rgba(255,255,255,.04);
+padding:30px;
+border-radius:25px;
+border:1px solid rgba(0,255,255,.12);
+transition:.4s;
+backdrop-filter:blur(15px);
+}
+
+.skill-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(0,247,255,.2);
+}
+
+.skill-card i{
+font-size:40px;
+color:#00f7ff;
+margin-bottom:20px;
+}
+
+.skill-card h3{
+margin-bottom:12px;
+}
+
+/* EXPERIENCE */
+
+.exp-card{
+max-width:900px;
+margin:auto;
+background:rgba(255,255,255,.04);
+padding:40px;
+border-radius:25px;
+border:1px solid rgba(0,255,255,.12);
+backdrop-filter:blur(15px);
+line-height:1.9;
+}
+
+/* FOOTER */
+
+footer{
+padding:40px 8%;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+background:rgba(0,0,0,.4);
+}
+
+.socials{
+margin-top:20px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.socials a{
+width:50px;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:rgba(255,255,255,.05);
+color:#00f7ff;
+font-size:20px;
+transition:.3s;
+text-decoration:none;
+}
+
+.socials a:hover{
+background:#00f7ff;
+color:black;
+transform:translateY(-5px);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+
+.hero-content{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.btn-group{
+justify-content:center;
+}
+
+.hero-text h1{
+font-size:50px;
+}
+
+}
+
+@media(max-width:768px){
+
+nav{
+padding:18px 5%;
+}
+
+nav ul{
+display:none;
+}
+
+.hero{
+padding:120px 5% 80px;
+}
+
+section{
+padding:80px 5%;
+}
+
+.hero-text h1{
+font-size:38px;
+}
+
+.section-title{
+font-size:32px;
+}
+
+.profile-card{
+padding:25px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+RAUL
+</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="about">
+
+<div class="hero-content">
+
+<div class="hero-text">
+
+<h1>
+RAULGONZALES<br>
+MANOA
+</h1>
+
+<h3>
+Future Software Engineer & Web3 Learner
+</h3>
+
+<p>
+I am an Information Technology student currently learning web development, software systems, and blockchain technology.
+I have a strong passion for futuristic technology, modern UI design, and building digital systems for the future.
+</p>
+
+<div class="btn-group">
+
+<a href="mailto:raulmanoa13@gmail.com" class="btn btn-primary">
+<i class="fa-solid fa-envelope"></i>
+Contact Me
+</a>
+
+<a href="https://github.com/raulmanoa13" target="_blank" class="btn btn-secondary">
+<i class="fa-brands fa-github"></i>
+GitHub
+</a>
+
+</div>
+
+</div>
+
+<!-- PROFILE CARD -->
+
+<div class="profile-card">
+
+<div class="profile-img">
+<i class="fa-solid fa-user-astronaut"></i>
+</div>
+
+<h2>
+RAULGONZALES MANOA
+</h2>
+
+<p>
+Bachelor of Information Technology Student
+</p>
+
+<div class="info">
+
+<div>
+<i class="fa-solid fa-envelope"></i>
+<span>raulmanoa13@gmail.com</span>
+</div>
+
+<div>
+<i class="fa-brands fa-github"></i>
+<span>github.com/raulmanoa13</span>
+</div>
+
+<div>
+<i class="fa-solid fa-graduation-cap"></i>
+<span>Currently Studying Information Technology</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2 class="section-title">
+MY SKILLS
+</h2>
+
+<div class="skills">
+
+<div class="skill-card">
+<i class="fa-solid fa-code"></i>
+<h3>Basic C++</h3>
+<p>
+Understanding the fundamentals of programming logic and basic software development using C++.
+</p>
+</div>
+
+<div class="skill-card">
+<i class="fa-brands fa-bitcoin"></i>
+<h3>Basic Crypto</h3>
+<p>
+Learning the fundamentals of cryptocurrency, blockchain systems, and digital payment technology.
+</p>
+</div>
+
+<div class="skill-card">
+<i class="fa-brands fa-js"></i>
+<h3>Basic JavaScript</h3>
+<p>
+Building interactive website functionality using JavaScript and DOM manipulation.
+</p>
+</div>
+
+<div class="skill-card">
+<i class="fa-brands fa-html5"></i>
+<h3>Basic HTML</h3>
+<p>
+Creating modern and responsive website structures using HTML5.
+</p>
+</div>
+
+<div class="skill-card">
+<i class="fa-brands fa-css3-alt"></i>
+<h3>Basic CSS</h3>
+<p>
+Designing modern website layouts with responsive styling and animations.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+<h2 class="section-title">
+EXPERIENCE
+</h2>
+
+<div class="exp-card">
+
+<h3 style="margin-bottom:20px;color:#00f7ff;">
+Learning Journey
+</h3>
+
+<p>
+I do not have professional work experience yet, but I am actively learning how to build websites, software systems, dashboards, and blockchain-based applications.
+</p>
+
+<br>
+
+<p>
+I continuously improve my skills in frontend development, UI design, and modern web technologies to become a professional software developer in the future.
+</p>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+<h2 style="font-family:'Orbitron',sans-serif;">
+LET'S CONNECT
+</h2>
+
+<p style="margin-top:15px;color:#d0d0d0;">
+Thank you for visiting my personal portfolio website.
+</p>
+
+<div class="socials">
+
+<a href="mailto:raulmanoa13@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+</a>
+
+<a href="https://github.com/raulmanoa13" target="_blank">
+<i class="fa-brands fa-github"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-linkedin"></i>
+</a>
+
+<a href="#">
+<i class="fa-solid fa-globe"></i>
+</a>
+
+</div>
+
+<p style="margin-top:30px;color:#888;">
+© 2026 RAULGONZALES MANOA | Personal Portfolio
+</p>
+
+</footer>
+
+</body>
+</html>
